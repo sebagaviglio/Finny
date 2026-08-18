@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finny — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0E14;
+  --ink-2:#141826;
+  --deep-violet:#1B1640;
+  --paper:#F8F6F2;
+  --paper-2:#EFEBE3;
+  --cobalt:#3654FF;
+  --lime:#B6FF3D;
+  --coral:#FF5C7A;
+  --slate:#70758A;
+  --slate-light:#A7ABBB;
+
+  --font-display:'Space Grotesk', sans-serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'JetBrains Mono', monospace;
+
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px;
+  --space-5:48px; --space-6:64px; --space-7:96px; --space-8:140px;
+
+  --r-sm:4px; --r-md:12px; --r-lg:24px; --r-pill:999px;
+
+  --sidebar-w:220px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--lime);color:var(--ink);}
+
+/* ===== LAYOUT ===== */
+.shell{display:flex;}
+.sidebar{
+  position:fixed; top:0; left:0; bottom:0; width:var(--sidebar-w);
+  background:var(--ink); color:var(--paper);
+  padding:var(--space-4) var(--space-3);
+  display:flex; flex-direction:column; justify-content:space-between;
+  z-index:50;
+}
+.sidebar .brandmark-mini{display:flex; align-items:center; gap:10px; margin-bottom:var(--space-5);}
+.sidebar .brandmark-mini span{font-family:var(--font-display); font-weight:700; font-size:18px; letter-spacing:-0.02em;}
+.sidebar nav{display:flex; flex-direction:column; gap:2px;}
+.sidebar nav a{
+  font-size:13px; color:var(--slate-light); padding:9px 10px; border-radius:var(--r-sm);
+  transition:all .15s ease; font-weight:500;
+}
+.sidebar nav a:hover{color:var(--paper); background:rgba(255,255,255,.06);}
+.sidebar .foot{font-size:11px; color:var(--slate); font-family:var(--font-mono); line-height:1.6;}
+
+.main{margin-left:var(--sidebar-w); flex:1; min-width:0;}
+
+section{padding:var(--space-8) var(--space-6); position:relative; overflow:hidden;}
+.section-inner{max-width:1080px; margin:0 auto;}
+.eyebrow{
+  font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--cobalt); margin-bottom:var(--space-2); display:flex; align-items:center; gap:8px;
+}
+.eyebrow::before{content:''; width:16px; height:1px; background:var(--cobalt);}
+h2.section-title{
+  font-family:var(--font-display); font-weight:600; font-size:clamp(28px,3.4vw,44px);
+  letter-spacing:-0.02em; margin-bottom:var(--space-2); max-width:16ch;
+}
+.section-lede{color:var(--slate); font-size:17px; max-width:56ch; margin-bottom:var(--space-5);}
+.on-dark .section-lede{color:var(--slate-light);}
+
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4);}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-3);}
+.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-3);}
+
+/* ===== AURA GRADIENT SYSTEM ===== */
+.aura-bg{position:absolute; inset:0; z-index:0; overflow:hidden;}
+.aura-bg span{
+  position:absolute; border-radius:50%; filter:blur(70px); opacity:.55;
+  animation:drift 22s ease-in-out infinite alternate;
+}
+.aura-bg .a1{width:480px;height:480px; background:var(--cobalt); top:-120px; left:-100px;}
+.aura-bg .a2{width:420px;height:420px; background:var(--deep-violet); bottom:-140px; right:10%; animation-delay:-6s;}
+.aura-bg .a3{width:360px;height:360px; background:var(--lime); bottom:-160px; left:20%; opacity:.35; animation-delay:-12s;}
+.aura-bg .a4{width:300px;height:300px; background:var(--coral); top:10%; right:-80px; opacity:.3; animation-delay:-3s;}
+@keyframes drift{
+  0%{transform:translate(0,0) scale(1);}
+  100%{transform:translate(30px,-24px) scale(1.08);}
+}
+@media (prefers-reduced-motion: reduce){ .aura-bg span{animation:none;} }
+
+.on-dark{background:var(--ink); color:var(--paper);}
+.on-dark .slate{color:var(--slate-light);}
+.on-paper2{background:var(--paper-2);}
+
+/* ===== COVER ===== */
+.cover{
+  min-height:100vh; display:flex; flex-direction:column; justify-content:space-between;
+  background:var(--ink); color:var(--paper); padding:var(--space-5) var(--space-6);
+}
+.cover-top{position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start;
+  font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--slate-light);}
+.cover-center{position:relative; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:var(--space-3); margin:auto 0;}
+.cover-mark{width:88px; height:88px;}
+.cover-wordmark{font-family:var(--font-display); font-weight:700; font-size:clamp(56px,9vw,120px); letter-spacing:-0.03em; line-height:.9;}
+.cover-tagline{font-size:clamp(18px,2vw,24px); color:var(--slate-light); max-width:24ch; font-weight:400;}
+.cover-bottom{position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-end;
+  font-family:var(--font-mono); font-size:12px; color:var(--slate-light);}
+
+/* ===== LOGO MARK ===== */
+.mark-swatch{
+  display:flex; align-items:center; justify-content:center; border-radius:var(--r-lg);
+  aspect-ratio:1; padding:var(--space-4);
+}
+.mark-swatch.dark{background:var(--ink);}
+.mark-swatch.light{background:var(--paper); border:1px solid rgba(0,0,0,.08);}
+.mark-swatch svg{width:56%; height:56%;}
+
+.lockup-card{
+  background:var(--ink); border-radius:var(--r-lg); padding:var(--space-4);
+  display:flex; align-items:center; gap:14px; color:var(--paper);
+}
+.lockup-card.light{background:var(--paper); color:var(--ink); border:1px solid rgba(0,0,0,.08);}
+.lockup-card svg.logo-icon{width:34px; height:34px; flex-shrink:0;}
+.lockup-card .wordmark{font-family:var(--font-display); font-weight:700; font-size:26px; letter-spacing:-0.02em;}
+
+.clearspace-box{
+  background:var(--paper-2); border-radius:var(--r-lg); padding:var(--space-5);
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+.clearspace-box .unit-box{
+  border:1.5px dashed var(--cobalt); border-radius:var(--r-md);
+  width:180px; height:180px; display:flex; align-items:center; justify-content:center; position:relative;
+}
+.clearspace-box .unit-box svg{width:70px;height:70px;}
+.clearspace-box .unit-box::before, .clearspace-box .unit-box::after{
+  content:'x'; position:absolute; font-family:var(--font-mono); font-size:11px; color:var(--cobalt);
+}
+.clearspace-box .unit-box::before{top:-20px; left:50%; transform:translateX(-50%);}
+.clearspace-box .unit-box::after{bottom:-20px; left:50%; transform:translateX(-50%);}
+
+/* misuse cards */
+.misuse-card{
+  background:var(--ink); border-radius:var(--r-md); padding:var(--space-3);
+  display:flex; flex-direction:column; align-items:center; gap:14px; position:relative;
+}
+.misuse-card .stage{width:100%; height:100px; display:flex; align-items:center; justify-content:center; position:relative;}
+.misuse-card .stage svg{width:60px; height:60px;}
+.misuse-card .x-badge{
+  position:absolute; top:6px; right:6px; width:22px; height:22px; border-radius:50%;
+  background:var(--coral); color:var(--ink); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+.misuse-card p{font-size:12.5px; color:var(--slate-light); text-align:center; font-family:var(--font-mono);}
+
+/* ===== COLOR SWATCHES ===== */
+.swatch{border-radius:var(--r-md); overflow:hidden; border:1px solid rgba(0,0,0,.06);}
+.swatch .fill{height:120px;}
+.swatch .meta{background:var(--paper); padding:14px 16px;}
+.swatch .meta .name{font-family:var(--font-display); font-weight:600; font-size:15px; margin-bottom:2px;}
+.swatch .meta .hex{font-family:var(--font-mono); font-size:12px; color:var(--slate);}
+.swatch .meta .use{font-size:12px; color:var(--slate); margin-top:6px;}
+
+/* ===== TYPE ===== */
+.type-row{display:flex; align-items:baseline; justify-content:space-between; padding:var(--space-3) 0; border-bottom:1px solid rgba(0,0,0,.08); gap:var(--space-3);}
+.type-row .sample{font-family:var(--font-display); font-weight:600; letter-spacing:-0.02em;}
+.type-row .label{font-family:var(--font-mono); font-size:12px; color:var(--slate); white-space:nowrap;}
+
+.type-family-card{background:var(--ink); color:var(--paper); border-radius:var(--r-lg); padding:var(--space-4);}
+.type-family-card .role{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); margin-bottom:10px;}
+.type-family-card .fam{font-family:var(--font-display); font-size:34px; font-weight:700; margin-bottom:8px;}
+.type-family-card.body .fam{font-family:var(--font-body); font-weight:600;}
+.type-family-card.mono .fam{font-family:var(--font-mono); font-weight:500; font-size:28px;}
+.type-family-card p.desc{font-size:13.5px; color:var(--slate-light); max-width:32ch;}
+
+.rate-demo{
+  background:var(--ink); border-radius:var(--r-lg); padding:var(--space-4);
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-3);
+}
+.rate-demo .num{font-family:var(--font-mono); font-weight:600; font-size:clamp(32px,4vw,54px); color:var(--lime); letter-spacing:-0.01em;}
+.rate-demo .num span{font-size:.4em; color:var(--slate-light); font-weight:400;}
+.rate-demo .cap{font-size:12.5px; color:var(--slate-light); max-width:26ch;}
+
+/* ===== SPACING/GRID TOKENS ===== */
+.token-row{display:flex; align-items:center; gap:var(--space-3); padding:12px 0; border-bottom:1px solid rgba(0,0,0,.08);}
+.token-row .bar{background:var(--cobalt); height:10px; border-radius:2px;}
+.token-row .tname{font-family:var(--font-mono); font-size:12.5px; width:120px; color:var(--slate);}
+.token-row .tval{font-family:var(--font-mono); font-size:12.5px; color:var(--ink); width:60px;}
+
+.radius-card{background:var(--paper-2); display:flex; flex-direction:column; align-items:center; gap:10px; padding:var(--space-3); border-radius:var(--r-md);}
+.radius-card .shape{width:64px; height:64px; background:var(--ink);}
+.radius-card .lbl{font-family:var(--font-mono); font-size:11.5px; color:var(--slate);}
+
+/* ===== ICONS ===== */
+.icon-card{background:var(--paper); border:1px solid rgba(0,0,0,.08); border-radius:var(--r-md); padding:var(--space-3);
+  display:flex; flex-direction:column; align-items:center; gap:10px;}
+.icon-card svg{width:32px; height:32px;}
+.icon-card span{font-family:var(--font-mono); font-size:11.5px; color:var(--slate);}
+
+/* ===== VOICE ===== */
+.trait-card{background:var(--ink); color:var(--paper); border-radius:var(--r-lg); padding:var(--space-4);}
+.trait-card .num{font-family:var(--font-mono); font-size:12px; color:var(--lime); margin-bottom:12px;}
+.trait-card h4{font-family:var(--font-display); font-size:20px; font-weight:600; margin-bottom:8px;}
+.trait-card p{font-size:13.5px; color:var(--slate-light);}
+
+.copy-table{border-radius:var(--r-lg); overflow:hidden; border:1px solid rgba(0,0,0,.08);}
+.copy-row{display:grid; grid-template-columns:1fr 1fr; }
+.copy-row + .copy-row{border-top:1px solid rgba(0,0,0,.08);}
+.copy-cell{padding:var(--space-3) var(--space-4); font-size:14.5px;}
+.copy-cell.no{background:#fff0f2; }
+.copy-cell.yes{background:#f0fff0; }
+.copy-cell .lbl{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; display:block; margin-bottom:6px;}
+.copy-cell.no .lbl{color:var(--coral);}
+.copy-cell.yes .lbl{color:#2f9e44;}
+
+/* ===== APPLICATIONS ===== */
+.app-screen{
+  background:var(--ink); border-radius:28px; padding:22px; width:260px; position:relative; overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.35);
+}
+.app-screen .aura-bg span{opacity:.4;}
+.app-screen .top{position:relative;z-index:2; display:flex; justify-content:space-between; align-items:center; margin-bottom:28px;}
+.app-screen .top .logo-icon{width:22px;height:22px;}
+.app-screen .top .word{font-family:var(--font-display); font-weight:700; font-size:14px;}
+.app-screen h3.big{position:relative;z-index:2; font-family:var(--font-display); font-weight:600; font-size:22px; line-height:1.15; margin-bottom:24px; max-width:14ch;}
+.app-screen .card{position:relative;z-index:2; background:rgba(255,255,255,.06); backdrop-filter:blur(6px); border-radius:var(--r-md); padding:16px; margin-bottom:12px;}
+.app-screen .card .lbl{font-family:var(--font-mono); font-size:10.5px; color:var(--slate-light); text-transform:uppercase; letter-spacing:.06em;}
+.app-screen .card .val{font-family:var(--font-mono); font-weight:600; font-size:22px; color:var(--lime); margin-top:4px;}
+.app-screen .cta{position:relative;z-index:2; background:var(--lime); color:var(--ink); text-align:center; font-weight:600; font-family:var(--font-display); border-radius:var(--r-pill); padding:14px; margin-top:16px; font-size:14px;}
+
+.social-post{width:260px; aspect-ratio:1; border-radius:var(--r-lg); position:relative; overflow:hidden; background:var(--paper);}
+.social-post .aura-bg span{opacity:.75;}
+.social-post .content{position:relative;z-index:2; height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:22px;}
+.social-post .logo-icon{width:24px;height:24px;}
+.social-post h4{font-family:var(--font-display); font-weight:600; font-size:21px; line-height:1.1; color:var(--ink);}
+.social-post .tag{align-self:flex-start; background:var(--ink); color:var(--paper); font-family:var(--font-mono); font-size:10.5px; padding:6px 12px; border-radius:var(--r-pill);}
+
+.fin-card{
+  width:260px; aspect-ratio:1.58; border-radius:20px; background:var(--ink); position:relative; overflow:hidden;
+  padding:22px; display:flex; flex-direction:column; justify-content:space-between;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.35);
+}
+.fin-card .aura-bg span{opacity:.5;}
+.fin-card .row1{position:relative;z-index:2; display:flex; justify-content:space-between; align-items:center;}
+.fin-card .logo-icon{width:26px;height:26px;}
+.fin-card .chip{width:34px;height:26px; border-radius:5px; background:linear-gradient(135deg,#e8dfc2,#cbb984);}
+.fin-card .num{position:relative;z-index:2; font-family:var(--font-mono); font-size:16px; color:var(--paper); letter-spacing:.08em;}
+.fin-card .name{position:relative;z-index:2; font-family:var(--font-mono); font-size:11px; color:var(--slate-light); text-transform:uppercase;}
+
+.apps-wrap{display:flex; gap:var(--space-4); flex-wrap:wrap; align-items:flex-start;}
+
+footer.close{
+  background:var(--ink); color:var(--paper); padding:var(--space-8) var(--space-6);
+  display:flex; flex-direction:column; align-items:flex-start; gap:var(--space-3);
+}
+footer.close .big{font-family:var(--font-display); font-weight:600; font-size:clamp(30px,4vw,54px); letter-spacing:-0.02em; max-width:18ch;}
+footer.close .meta{font-family:var(--font-mono); font-size:12px; color:var(--slate-light); display:flex; gap:var(--space-4); flex-wrap:wrap;}
+
+@media (max-width: 900px){
+  .sidebar{position:relative; width:100%; height:auto; flex-direction:row; align-items:center; padding:14px 20px; overflow-x:auto;}
+  .sidebar .foot{display:none;}
+  .sidebar nav{flex-direction:row; gap:4px;}
+  .sidebar .brandmark-mini{margin-bottom:0; margin-right:16px;}
+  .main{margin-left:0;}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+  section{padding:var(--space-6) var(--space-3);}
+  .apps-wrap{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- reusable logo mark as inline SVG symbol -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="auraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3654FF"/>
+      <stop offset="55%" stop-color="#8B6BFF"/>
+      <stop offset="100%" stop-color="#B6FF3D"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div>
+      <div class="brandmark-mini">
+        <svg viewBox="0 0 100 100" width="24" height="24">
+          <rect x="18" y="35" width="64" height="30" rx="15" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+          <rect x="18" y="35" width="64" height="30" rx="15" fill="none" stroke="#0B0E14" stroke-width="4" transform="rotate(24 50 50)"/>
+          <rect x="18" y="35" width="64" height="30" rx="15" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+        </svg>
+        <span>finny</span>
+      </div>
+      <nav>
+        <a href="#fundamento">Fundamento</a>
+        <a href="#voz">Voz &amp; tono</a>
+        <a href="#logo">Logo</a>
+        <a href="#usos">Usos incorrectos</a>
+        <a href="#color">Color</a>
+        <a href="#tipografia">Tipografía</a>
+        <a href="#sistema">Sistema Aura</a>
+        <a href="#grid">Grid &amp; espaciado</a>
+        <a href="#iconografia">Iconografía</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+      </nav>
+    </div>
+    <div class="foot">FINNY<br>BRAND BOOK<br>V1.0 — 2026</div>
+  </aside>
+
+  <main class="main">
+
+    <!-- ================= COVER ================= -->
+    <section class="cover" id="top">
+      <div class="aura-bg"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span></div>
+      <div class="cover-top">
+        <span>Finny — Préstamos entre personas</span>
+        <span>Brand Book / 01</span>
+      </div>
+      <div class="cover-center">
+        <svg class="cover-mark" viewBox="0 0 100 100">
+          <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+          <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+          <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+        </svg>
+        <div class="cover-wordmark">finny</div>
+        <p class="cover-tagline">Entre personas, sin vueltas. El sistema de marca completo.</p>
+      </div>
+      <div class="cover-bottom">
+        <span>Fintech P2P — Argentina</span>
+        <span>finny.com</span>
+      </div>
+    </section>
+
+    <!-- ================= FUNDAMENTO ================= -->
+    <section id="fundamento">
+      <div class="section-inner">
+        <p class="eyebrow">Fundamento de marca</p>
+        <h2 class="section-title">Sacamos al banco del medio.</h2>
+        <p class="section-lede">Finny conecta directamente a quien necesita plata con quien quiere hacerla crecer. Sin sucursales, sin letra chica, sin intermediarios que se quedan con la diferencia. Una app, dos personas, un acuerdo claro.</p>
+        <div class="grid-3">
+          <div>
+            <p class="eyebrow" style="margin-bottom:8px">Misión</p>
+            <p style="max-width:34ch">Que pedir o prestar plata entre personas sea tan simple, rápido y transparente como mandar un mensaje.</p>
+          </div>
+          <div>
+            <p class="eyebrow" style="margin-bottom:8px">Para quién</p>
+            <p style="max-width:34ch">Personas de 22 a 40 años, digitales de nacimiento, cansadas de la burocracia bancaria pero exigentes con su plata.</p>
+          </div>
+          <div>
+            <p class="eyebrow" style="margin-bottom:8px">Posicionamiento</p>
+            <p style="max-width:34ch">La plataforma P2P que une la agilidad de una fintech joven con la seriedad de un sistema financiero real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VOZ Y TONO ================= -->
+    <section id="voz" class="on-dark">
+      <div class="section-inner">
+        <p class="eyebrow" style="color:var(--lime)">Voz &amp; tono</p>
+        <h2 class="section-title">Hablamos como una persona, no como un banco.</h2>
+        <p class="section-lede slate">Usamos "vos". Somos directos y calidos. Explicamos la plata en palabras simples, nunca en letra chica. Cuatro rasgos guían cada texto que escribimos.</p>
+        <div class="grid-4">
+          <div class="trait-card"><p class="num">01</p><h4>Directa</h4><p>Decimos las tasas, los plazos y los riesgos sin rodeos. Nada de asteriscos escondidos.</p></div>
+          <div class="trait-card"><p class="num">02</p><h4>Cercana</h4><p>Escribimos como le hablaríamos a un amigo que nos pide una recomendación con la plata.</p></div>
+          <div class="trait-card"><p class="num">03</p><h4>Ágil</h4><p>Frases cortas, verbos activos. Todo se puede resolver desde el celular, en minutos.</p></div>
+          <div class="trait-card"><p class="num">04</p><h4>Confiable</h4><p>Relajada en la forma, seria en el fondo. La plata de la gente se trata con respeto.</p></div>
+        </div>
+
+        <div style="margin-top:var(--space-5)">
+          <p class="eyebrow" style="color:var(--lime); margin-bottom:14px">En la práctica</p>
+          <div class="copy-table">
+            <div class="copy-row">
+              <div class="copy-cell no"><span class="lbl">Evitar</span>Su solicitud de crédito se encuentra en proceso de evaluación.</div>
+              <div class="copy-cell yes"><span class="lbl">Preferir</span>Estamos revisando tu pedido. Te avisamos en menos de 2 horas.</div>
+            </div>
+            <div class="copy-row">
+              <div class="copy-cell no"><span class="lbl">Evitar</span>¡Aprovechá esta increíble oportunidad única e imperdible!</div>
+              <div class="copy-cell yes"><span class="lbl">Preferir</span>Tasa fija del 42% anual. Sin costos ocultos.</div>
+            </div>
+            <div class="copy-row">
+              <div class="copy-cell no"><span class="lbl">Evitar</span>Error 403: transacción no procesada por el sistema.</div>
+              <div class="copy-cell yes"><span class="lbl">Preferir</span>No pudimos procesar el pago. Probá de nuevo o cambiá el medio.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOGO ================= -->
+    <section id="logo">
+      <div class="section-inner">
+        <p class="eyebrow">El isotipo — "El Vínculo"</p>
+        <h2 class="section-title">Dos partes, un acuerdo.</h2>
+        <p class="section-lede">La marca nace de un link: dos formas redondeadas que se cruzan y se sostienen entre sí, como dos personas que llegan a un acuerdo directo. Es geométrica pero nunca fría — los extremos redondeados la vuelven cercana.</p>
+
+        <div class="grid-2" style="margin-bottom:var(--space-4)">
+          <div class="mark-swatch dark">
+            <svg viewBox="0 0 100 100">
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+            </svg>
+          </div>
+          <div class="mark-swatch light">
+            <svg viewBox="0 0 100 100">
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#F8F6F2" stroke-width="5" transform="rotate(24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="#0B0E14" transform="rotate(24 50 50)"/>
+            </svg>
+          </div>
+        </div>
+
+        <p class="eyebrow" style="margin-bottom:14px">Lockups</p>
+        <div class="grid-2" style="margin-bottom:var(--space-4)">
+          <div class="lockup-card">
+            <svg class="logo-icon" viewBox="0 0 100 100">
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+            </svg>
+            <span class="wordmark">finny</span>
+          </div>
+          <div class="lockup-card light">
+            <svg class="logo-icon" viewBox="0 0 100 100">
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#F8F6F2" stroke-width="5" transform="rotate(24 50 50)"/>
+              <rect x="12" y="33" width="76" height="34" rx="17" fill="#0B0E14" transform="rotate(24 50 50)"/>
+            </svg>
+            <span class="wordmark">finny</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <p class="eyebrow" style="margin-bottom:14px">Área de resguardo</p>
+            <div class="clearspace-box">
+              <div class="unit-box">
+                <svg viewBox="0 0 100 100">
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="var(--ink)" transform="rotate(-24 50 50)"/>
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="var(--paper-2)" stroke-width="6" transform="rotate(24 50 50)"/>
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="var(--paper-2)" transform="rotate(24 50 50)"/>
+                </svg>
+              </div>
+            </div>
+            <p style="font-size:13px; color:var(--slate); margin-top:10px">El espacio libre mínimo alrededor del isotipo equivale a "x" (la altura del propio isotipo). Nada de texto, íconos ni bordes de página lo invaden.</p>
+          </div>
+          <div>
+            <p class="eyebrow" style="margin-bottom:14px">Tamaño mínimo</p>
+            <div style="background:var(--paper-2); border-radius:var(--r-lg); padding:var(--space-5); display:flex; align-items:flex-end; justify-content:center; gap:28px; height:100%">
+              <div style="text-align:center">
+                <svg viewBox="0 0 100 100" width="48" height="48" style="margin:0 auto 10px">
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="var(--ink)" transform="rotate(-24 50 50)"/>
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="var(--paper-2)" stroke-width="6" transform="rotate(24 50 50)"/>
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="var(--paper-2)" transform="rotate(24 50 50)"/>
+                </svg>
+                <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--slate)">Digital: 24px</span>
+              </div>
+              <div style="text-align:center">
+                <svg viewBox="0 0 100 100" width="20" height="20" style="margin:0 auto 10px">
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="var(--ink)" transform="rotate(-24 50 50)"/>
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="var(--paper-2)" stroke-width="8" transform="rotate(24 50 50)"/>
+                  <rect x="12" y="33" width="76" height="34" rx="17" fill="var(--paper-2)" transform="rotate(24 50 50)"/>
+                </svg>
+                <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--slate)">Favicon: 16px</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= USOS INCORRECTOS ================= -->
+    <section id="usos" class="on-paper2">
+      <div class="section-inner">
+        <p class="eyebrow">Lo que no hacemos</p>
+        <h2 class="section-title">El vínculo se respeta.</h2>
+        <p class="section-lede">El isotipo mantiene siempre sus proporciones, su gradiente y su claridad. Estos son los errores más comunes a evitar.</p>
+        <div class="grid-4">
+          <div class="misuse-card">
+            <div class="x-badge">✕</div>
+            <div class="stage">
+              <svg viewBox="0 0 100 100" style="transform:scaleX(1.8)">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+              </svg>
+            </div>
+            <p>No deformar ni estirar</p>
+          </div>
+          <div class="misuse-card">
+            <div class="x-badge">✕</div>
+            <div class="stage">
+              <svg viewBox="0 0 100 100">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#FF5C7A" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#B6FF3D" transform="rotate(24 50 50)"/>
+              </svg>
+            </div>
+            <p>No usar colores fuera de paleta</p>
+          </div>
+          <div class="misuse-card">
+            <div class="x-badge">✕</div>
+            <div class="stage">
+              <svg viewBox="0 0 100 100" style="filter:drop-shadow(6px 8px 0px rgba(255,92,122,.6)) rotate(18deg)">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+              </svg>
+            </div>
+            <p>No rotar ni sombrear</p>
+          </div>
+          <div class="misuse-card" style="background:repeating-linear-gradient(45deg,#141826,#141826 6px,#1B1640 6px,#1B1640 12px)">
+            <div class="x-badge">✕</div>
+            <div class="stage">
+              <svg viewBox="0 0 100 100">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+              </svg>
+            </div>
+            <p>No ubicar sobre fondos ruidosos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COLOR ================= -->
+    <section id="color">
+      <div class="section-inner">
+        <p class="eyebrow">Sistema de color</p>
+        <h2 class="section-title">Frío y confiable, con un golpe de energía.</h2>
+        <p class="section-lede">La base es oscura y sobria — como corresponde a la plata. El cobalto aporta tecnología y confianza; el lima es la energía disruptiva reservada para las acciones importantes; el coral suma calidez humana.</p>
+        <div class="grid-3" style="margin-bottom:var(--space-3)">
+          <div class="swatch">
+            <div class="fill" style="background:#0B0E14"></div>
+            <div class="meta"><div class="name">Ink</div><div class="hex">#0B0E14</div><div class="use">Fondos principales, texto sobre claro</div></div>
+          </div>
+          <div class="swatch">
+            <div class="fill" style="background:#F8F6F2"></div>
+            <div class="meta"><div class="name">Paper</div><div class="hex">#F8F6F2</div><div class="use">Fondos claros, respiro editorial</div></div>
+          </div>
+          <div class="swatch">
+            <div class="fill" style="background:#3654FF"></div>
+            <div class="meta"><div class="name">Cobalto</div><div class="hex">#3654FF</div><div class="use">Color primario — tecnología, confianza</div></div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="swatch">
+            <div class="fill" style="background:#B6FF3D"></div>
+            <div class="meta"><div class="name">Lima</div><div class="hex">#B6FF3D</div><div class="use">CTAs y datos — usar con moderación</div></div>
+          </div>
+          <div class="swatch">
+            <div class="fill" style="background:#FF5C7A"></div>
+            <div class="meta"><div class="name">Coral</div><div class="hex">#FF5C7A</div><div class="use">Calidez humana, alertas suaves</div></div>
+          </div>
+          <div class="swatch">
+            <div class="fill" style="background:#1B1640"></div>
+            <div class="meta"><div class="name">Violeta profundo</div><div class="hex">#1B1640</div><div class="use">Segundo plano en gradientes</div></div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:var(--slate); margin-top:var(--space-3); max-width:60ch">Proporción recomendada: 60% Ink/Paper, 30% Cobalto, 10% Lima + Coral combinados. El lima nunca se usa como color de fondo extenso — pierde jerarquía y agrede la vista.</p>
+      </div>
+    </section>
+
+    <!-- ================= TIPOGRAFÍA ================= -->
+    <section id="tipografia" class="on-dark">
+      <div class="aura-bg" style="opacity:.5"><span class="a1"></span><span class="a2"></span></div>
+      <div class="section-inner">
+        <p class="eyebrow" style="color:var(--lime)">Tipografía</p>
+        <h2 class="section-title">Una voz para hablar, una para mostrar los números.</h2>
+        <p class="section-lede slate">Tres roles, tres familias. La monoespaciada es la más importante de las tres: en un producto financiero, los números son la promesa — y se muestran siempre en mono, tabulares y sin ambigüedad.</p>
+
+        <div class="grid-3" style="margin-bottom:var(--space-4)">
+          <div class="type-family-card"><p class="role">Display</p><p class="fam">Space Grotesk</p><p class="desc">Títulos, wordmark, momentos de marca. Uso con restricción, en peso 600–700.</p></div>
+          <div class="type-family-card body"><p class="role">Texto</p><p class="fam">Inter</p><p class="desc">Cuerpo, UI, formularios. Alta legibilidad en pantallas chicas.</p></div>
+          <div class="type-family-card mono"><p class="role">Datos</p><p class="fam">JetBrains Mono</p><p class="desc">Tasas, montos, plazos, timestamps. La honestidad se lee tabular.</p></div>
+        </div>
+
+        <div class="rate-demo" style="margin-bottom:var(--space-4)">
+          <div>
+            <div class="num">42<span>,0% TNA</span></div>
+          </div>
+          <p class="cap">Así se muestra siempre una tasa: en mono, en lima, sin redondeos escondidos.</p>
+        </div>
+
+        <div class="type-row"><span class="sample" style="font-size:48px">Entre personas</span><span class="label">H1 / 700 / -2%</span></div>
+        <div class="type-row"><span class="sample" style="font-size:32px">Pedí tu préstamo</span><span class="label">H2 / 600 / -2%</span></div>
+        <div class="type-row"><span class="sample" style="font-size:22px">Sin bancos de por medio</span><span class="label">H3 / 600 / -1%</span></div>
+        <div class="type-row"><span class="sample" style="font-family:var(--font-body); font-weight:400; font-size:17px">Revisá el estado de tu préstamo desde la app.</span><span class="label">Body / Inter 400</span></div>
+        <div class="type-row" style="border-bottom:none"><span class="sample" style="font-family:var(--font-mono); font-weight:500; font-size:14px">$150.000 · 12 cuotas · 3,5%</span><span class="label">Data / Mono 500</span></div>
+      </div>
+    </section>
+
+    <!-- ================= SISTEMA AURA ================= -->
+    <section id="sistema" class="on-paper2">
+      <div class="section-inner">
+        <p class="eyebrow">Sistema gráfico — "Aura"</p>
+        <h2 class="section-title">Un gradiente que respira, no que decora.</h2>
+        <p class="section-lede">El degradé cobalto → violeta → lima es la firma visual de Finny: la energía de dos personas encontrándose en un acuerdo. Se usa siempre difuminado y en movimiento sutil, nunca como fondo plano ni como textura decorativa suelta.</p>
+        <div class="grid-2">
+          <div style="position:relative; border-radius:var(--r-lg); overflow:hidden; height:260px; background:var(--ink)">
+            <div class="aura-bg"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span></div>
+            <div style="position:relative; z-index:2; height:100%; display:flex; align-items:flex-end; padding:var(--space-3)">
+              <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--slate-light)">Uso 01 — Hero / fondo oscuro completo</span>
+            </div>
+          </div>
+          <div style="position:relative; border-radius:var(--r-lg); overflow:hidden; height:260px; background:var(--paper)">
+            <div class="aura-bg" style="opacity:.6"><span class="a3" style="opacity:.5"></span><span class="a4" style="opacity:.4"></span></div>
+            <div style="position:relative; z-index:2; height:100%; display:flex; align-items:flex-end; padding:var(--space-3)">
+              <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--slate)">Uso 02 — Acento discreto / fondo claro</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:var(--slate); margin-top:var(--space-3); max-width:60ch">Regla de oro: el Aura ocupa como máximo el 30% del encuadre y siempre queda detrás del contenido, nunca lo cruza a media legibilidad.</p>
+      </div>
+    </section>
+
+    <!-- ================= GRID Y ESPACIADO ================= -->
+    <section id="grid">
+      <div class="section-inner">
+        <p class="eyebrow">Grid &amp; espaciado</p>
+        <h2 class="section-title">Base de 8px, esquinas honestas.</h2>
+        <p class="section-lede">Todo espaciado es múltiplo de 8. Los radios de borde crecen con el tamaño del componente: chico y cuadrado se siente serio; grande y curvo se siente humano.</p>
+        <div class="grid-2" style="margin-bottom:var(--space-4)">
+          <div>
+            <p class="eyebrow" style="margin-bottom:14px">Escala de espaciado</p>
+            <div class="token-row"><span class="tname">space-1</span><span class="tval">8px</span><div class="bar" style="width:8px"></div></div>
+            <div class="token-row"><span class="tname">space-2</span><span class="tval">16px</span><div class="bar" style="width:16px"></div></div>
+            <div class="token-row"><span class="tname">space-3</span><span class="tval">24px</span><div class="bar" style="width:24px"></div></div>
+            <div class="token-row"><span class="tname">space-4</span><span class="tval">32px</span><div class="bar" style="width:32px"></div></div>
+            <div class="token-row" style="border-bottom:none"><span class="tname">space-6</span><span class="tval">64px</span><div class="bar" style="width:64px"></div></div>
+          </div>
+          <div>
+            <p class="eyebrow" style="margin-bottom:14px">Escala de radios</p>
+            <div class="grid-4">
+              <div class="radius-card"><div class="shape" style="border-radius:4px"></div><span class="lbl">sm · 4px</span></div>
+              <div class="radius-card"><div class="shape" style="border-radius:12px"></div><span class="lbl">md · 12px</span></div>
+              <div class="radius-card"><div class="shape" style="border-radius:24px"></div><span class="lbl">lg · 24px</span></div>
+              <div class="radius-card"><div class="shape" style="border-radius:999px"></div><span class="lbl">pill</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ICONOGRAFÍA ================= -->
+    <section id="iconografia" class="on-paper2">
+      <div class="section-inner">
+        <p class="eyebrow">Iconografía</p>
+        <h2 class="section-title">Trazo de 1,5px, esquinas redondeadas.</h2>
+        <p class="section-lede">Set lineal, monocromático por defecto, con esquinas y remates redondeados que hacen eco del isotipo. El color se reserva para estados activos.</p>
+        <div class="grid-4">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18"/><circle cx="7" cy="14.5" r="1"/>
+            </svg>
+            <span>billetera</span>
+          </div>
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="10" width="9" height="6" rx="3"/><rect x="13" y="10" width="9" height="6" rx="3"/>
+            </svg>
+            <span>vínculo</span>
+          </div>
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19V13M11 19V7M18 19V10"/>
+            </svg>
+            <span>rendimiento</span>
+          </div>
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/>
+            </svg>
+            <span>respaldo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= APLICACIONES ================= -->
+    <section id="aplicaciones" class="on-dark">
+      <div class="section-inner">
+        <p class="eyebrow" style="color:var(--lime)">Aplicaciones</p>
+        <h2 class="section-title">La marca en la mano de la gente.</h2>
+        <p class="section-lede slate">Tres formatos donde el sistema Finny se pone a prueba: la app, un posteo social y la tarjeta física.</p>
+
+        <div class="apps-wrap">
+          <div class="app-screen">
+            <div class="aura-bg"><span class="a1"></span><span class="a2"></span><span class="a4"></span></div>
+            <div class="top">
+              <svg class="logo-icon" viewBox="0 0 100 100">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+              </svg>
+              <span class="word">finny</span>
+            </div>
+            <h3 class="big">Tu plata, trabajando para otra persona.</h3>
+            <div class="card"><div class="lbl">Rendimiento este mes</div><div class="val">+3,8%</div></div>
+            <div class="card"><div class="lbl">Prestado a 12 personas</div><div class="val">$420.000</div></div>
+            <div class="cta">Prestar ahora</div>
+          </div>
+
+          <div class="social-post">
+            <div class="aura-bg"><span class="a3"></span><span class="a4"></span></div>
+            <div class="content">
+              <svg class="logo-icon" viewBox="0 0 100 100">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#F8F6F2" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#0B0E14" transform="rotate(24 50 50)"/>
+              </svg>
+              <h4>Dejá de esperar al banco. Empezá hoy.</h4>
+              <span class="tag">finny.com</span>
+            </div>
+          </div>
+
+          <div class="fin-card">
+            <div class="aura-bg"><span class="a1"></span><span class="a2"></span></div>
+            <div class="row1">
+              <svg class="logo-icon" viewBox="0 0 100 100">
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="url(#auraGrad)" transform="rotate(-24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="none" stroke="#0B0E14" stroke-width="5" transform="rotate(24 50 50)"/>
+                <rect x="12" y="33" width="76" height="34" rx="17" fill="#F8F6F2" transform="rotate(24 50 50)"/>
+              </svg>
+              <div class="chip"></div>
+            </div>
+            <div>
+              <div class="num">4291&nbsp;&nbsp;7300&nbsp;&nbsp;0042&nbsp;&nbsp;9911</div>
+              <div class="name" style="margin-top:6px">Tarjeta Finny</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="close">
+      <div class="aura-bg" style="opacity:.4"><span class="a1"></span><span class="a3"></span></div>
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;gap:var(--space-3)">
+        <p class="big">Esto es Finny.<br>Entre personas, sin vueltas.</p>
+        <div class="meta">
+          <span>hola@finny.com</span>
+          <span>finny.com</span>
+          <span>Brand Book v1.0 — 2026</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
