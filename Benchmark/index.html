@@ -200,6 +200,39 @@ h2.section-title{
 .trait-card.lead .num, .trait-card.lead .fit{color:var(--ink);}
 .trait-card.lead p{color:rgba(11,14,20,.75);}
 
+/* ===== PRECEDENTE / QUOTE ===== */
+.quote-block{
+  border-left:2px solid var(--lime); padding-left:var(--space-4);
+  margin:var(--space-4) 0 var(--space-5);
+}
+.quote-block p{font-family:var(--font-display); font-weight:500; font-size:clamp(19px,2vw,25px); line-height:1.35; max-width:44ch; letter-spacing:-0.01em;}
+.quote-block .who{font-family:var(--font-mono); font-size:12px; color:var(--slate-light); margin-top:12px; display:block;}
+
+.fact-strip{display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-5);}
+.fact-pill{
+  background:var(--ink-2); border:1px solid rgba(255,255,255,.08); border-radius:var(--r-pill);
+  padding:9px 16px; display:flex; align-items:baseline; gap:8px; font-family:var(--font-mono); font-size:12.5px;
+}
+.fact-pill b{color:var(--lime); font-size:14px;}
+.fact-pill span{color:var(--slate-light);}
+
+.link-card{
+  background:var(--ink-2); border:1px solid rgba(255,255,255,.06); border-radius:var(--r-md);
+  padding:var(--space-3); display:flex; flex-direction:column; gap:6px;
+}
+.link-card .from{font-family:var(--font-mono); font-size:10.5px; color:var(--lime); text-transform:uppercase; letter-spacing:.06em;}
+.link-card p{font-size:13.5px; color:var(--slate-light);}
+
+.limit-table{border-radius:var(--r-lg); overflow:hidden; border:1px solid rgba(0,0,0,.08); margin-top:var(--space-4);}
+.limit-row{display:grid; grid-template-columns:1fr 1fr;}
+.limit-row + .limit-row{border-top:1px solid rgba(0,0,0,.08);}
+.limit-cell{padding:var(--space-3) var(--space-4); font-size:14px;}
+.limit-cell.apply{background:#eefaea;}
+.limit-cell.warn{background:#fff8e8;}
+.limit-cell .lbl{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; display:block; margin-bottom:6px;}
+.limit-cell.apply .lbl{color:#2f9e44;}
+.limit-cell.warn .lbl{color:#c98a12;}
+
 /* ===== STEP LIST ===== */
 .step-row{display:grid; grid-template-columns:56px 1fr; gap:var(--space-3); padding:var(--space-3) 0; border-bottom:1px solid rgba(0,0,0,.08); align-items:flex-start;}
 .step-row:last-child{border-bottom:none;}
@@ -259,6 +292,7 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
         <a href="#regulacion">Regulación</a>
         <a href="#balance">Pros &amp; contras</a>
         <a href="#oportunidad">Propuesta de valor</a>
+        <a href="#precedente">Precedente: Yunus</a>
         <a href="#validacion">Cómo validar</a>
       </nav>
     </div>
@@ -495,6 +529,55 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
             <p>Círculos de ahorro rotativo (tipo tanda) formalizados. Cero riesgo de intermediación financiera si se estructura bien, pero es difícil de monetizar solo.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= PRECEDENTE: YUNUS / GRAMEEN ================= -->
+    <section id="precedente" class="on-dark">
+      <div class="aura-bg"><span class="a2"></span><span class="a4"></span></div>
+      <div class="section-inner">
+        <p class="eyebrow">Precedente: colateral social</p>
+        <h2 class="section-title">Yunus no inventó el P2P. Inventó el colateral que no es dinero.</h2>
+        <p class="section-lede slate">Grameen Bank no es un marketplace de inversores — es una institución que presta con criterio propio. Lo que sí traslada directamente a Finny es el hallazgo central de Yunus: el vínculo entre personas puede sostener el repago mejor que una garantía financiera, cuando el diseño del producto usa ese vínculo bien.</p>
+
+        <div class="quote-block">
+          <p>"El crédito es un derecho humano." Yunus fundó Grameen Bank en 1976 prestando a quienes ningún banco aceptaba, reemplazando la garantía financiera por grupos de cinco personas con responsabilidad conjunta: si una fallaba, el grupo entero perdía acceso a crédito futuro.</p>
+          <span class="who">Muhammad Yunus — fundador de Grameen Bank, Premio Nobel de la Paz 2006</span>
+        </div>
+
+        <div class="fact-strip">
+          <div class="fact-pill"><b>1976</b><span>fundación en Bangladesh</span></div>
+          <div class="fact-pill"><b>&gt;95%</b><span>repago histórico en préstamos grupales</span></div>
+          <div class="fact-pill"><b>100+</b><span>países con el modelo replicado</span></div>
+          <div class="fact-pill"><b>2006</b><span>Nobel de la Paz compartido con Grameen Bank</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="link-card">
+            <span class="from">Conecta con la cuña 02</span>
+            <p><strong style="color:var(--paper)">Entre conocidos, formalizado.</strong> El hallazgo de Grameen es exactamente ese: la presión social entre pares reduce el default mejor que el scoring anónimo, porque lo que está en juego no es solo dinero, es reputación dentro de la comunidad.</p>
+          </div>
+          <div class="link-card">
+            <span class="from">Conecta con la cuña 03</span>
+            <p><strong style="color:var(--paper)">Comunidades cerradas.</strong> El modelo de grupo de Grameen es, en esencia, una comunidad cerrada con responsabilidad compartida — el mismo principio que hace que mutuales y empresas con débito de nómina tengan mora estructuralmente más baja.</p>
+          </div>
+        </div>
+
+        <div class="limit-table">
+          <div class="limit-row">
+            <div class="limit-cell apply"><span class="lbl">Sí aplica a Finny</span>El vínculo entre personas puede funcionar como colateral cuando el prestamista elige a quién le presta, en vez de fondear un pool anónimo.</div>
+            <div class="limit-cell warn"><span class="lbl">No es comparable</span>Grameen presta con capital institucional propio, no conecta ahorristas retail con desconocidos esperando rendimiento financiero — es otro modelo de negocio.</div>
+          </div>
+          <div class="limit-row">
+            <div class="limit-cell apply"><span class="lbl">Sí aplica a Finny</span>Diseñar el producto para reducir el riesgo del que presta es más sostenible a largo plazo que competir solo en velocidad o UX.</div>
+            <div class="limit-cell warn"><span class="lbl">No es comparable</span>La crisis de microfinanzas de Andhra Pradesh (2010) mostró qué pasa cuando la presión social se comercializa mal: sobreendeudamiento y cobranza coercitiva, con intervención regulatoria del gobierno indio.</div>
+          </div>
+          <div class="limit-row">
+            <div class="limit-cell apply"><span class="lbl">Sí aplica a Finny</span>El propio Yunus advirtió sobre el "mission drift": cuando el microcrédito se volvió puramente rentista perdió su propósito original — una alerta útil para no sobre-optimizar Finny solo por tasa.</div>
+            <div class="limit-cell warn"><span class="lbl">No es comparable</span>Revisiones académicas rigurosas (Banerjee, Duflo, Glennerster, 2015) encontraron impactos mucho más modestos del microcrédito sobre la pobreza que los que la narrativa original prometía.</div>
+          </div>
+        </div>
+        <p style="font-size:12.5px; color:var(--slate-light); margin-top:var(--space-3); font-family:var(--font-mono)">Fuente: Grameen Bank · Comité del Nobel (2006) · Banerjee, Duflo &amp; Glennerster, "The Miracle of Microfinance? Evidence from a Randomized Evaluation" (2015) · cobertura de la crisis de microfinanzas de Andhra Pradesh, 2010.</p>
       </div>
     </section>
 
