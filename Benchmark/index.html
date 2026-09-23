@@ -226,7 +226,7 @@ h2.section-title{
 .limit-table{border-radius:var(--r-lg); overflow:hidden; border:1px solid rgba(0,0,0,.08); margin-top:var(--space-4);}
 .limit-row{display:grid; grid-template-columns:1fr 1fr;}
 .limit-row + .limit-row{border-top:1px solid rgba(0,0,0,.08);}
-.limit-cell{padding:var(--space-3) var(--space-4); font-size:14px;}
+.limit-cell{padding:var(--space-3) var(--space-4); font-size:14px; color:var(--ink);}
 .limit-cell.apply{background:#eefaea;}
 .limit-cell.warn{background:#fff8e8;}
 .limit-cell .lbl{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; display:block; margin-bottom:6px;}
@@ -330,7 +330,7 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
       <div class="section-inner">
         <p class="eyebrow">Resumen ejecutivo</p>
         <h2 class="section-title">La hipótesis es correcta, pero apunta al segmento equivocado.</h2>
-        <p class="section-lede">Argentina tiene el crédito privado más chico y con la mora más alta de la región — hay una oportunidad estructural real. Pero el P2P clásico de consumo en pesos, sin garantía, está en retirada en toda LatAm justo ahora. La cuña gana cuando reduce el riesgo del prestamista, no cuando solo simplifica la pantalla.</p>
+        <p class="section-lede">Argentina tiene el crédito privado más chico y con la mora más alta de la región — hay una oportunidad estructural real. Pero el P2P clásico de consumo en pesos, sin garantía, está en retirada en toda LatAm justo ahora. La palanca gana cuando reduce el riesgo del prestamista, no cuando solo simplifica la pantalla.</p>
         <div class="grid-3">
           <div class="verdict-card">
             <span class="tag">Oportunidad macro</span>
@@ -344,8 +344,8 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
           </div>
           <div class="verdict-card accent">
             <span class="tag">Segmento recomendado</span>
-            <h4>P2P con garantía real o afinidad, no P2P puro de consumo</h4>
-            <p>El único P2P argentino que crece con mora cero es el hipotecario en dólares. La experiencia simple es tabla stakes; el diferencial real está en reducir el riesgo del que presta.</p>
+            <h4>P2P con garantía real, ticket alto o afinidad — no P2P masivo de consumo</h4>
+            <p>Lendar, el único P2P argentino que crece con mora cero, lo prueba vía garantía hipotecaria. Pero también hay margen arriba del ticket promedio fintech ($541.000): consumo de monto medio-alto, lejos del segmento más golpeado por la mora. La experiencia simple es tabla stakes; el diferencial real está en reducir el riesgo del que presta.</p>
           </div>
         </div>
       </div>
@@ -501,14 +501,14 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
       <div class="aura-bg"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
       <div class="section-inner">
         <p class="eyebrow">Propuesta de valor diferenciadora</p>
-        <h2 class="section-title">Dónde SÍ hay una cuña real.</h2>
-        <p class="section-lede slate">"Fácil e intuitivo" ya lo tienen Ualá y Mercado Pago con distribución masiva. El diferencial defendible está del lado difícil: el riesgo que asume quien presta. Cuatro cuñas, ordenadas de más a menos defendible hoy.</p>
+        <h2 class="section-title">Dónde SÍ hay una palanca real.</h2>
+        <p class="section-lede slate">"Fácil e intuitivo" ya lo tienen Ualá y Mercado Pago con distribución masiva. El diferencial defendible está del lado difícil: el riesgo que asume quien presta. Cuatro palancas, ordenadas de más a menos defendible hoy.</p>
         <div class="grid-4">
           <div class="trait-card lead">
             <span class="num">01</span>
             <span class="fit">Más defendible ahora</span>
-            <h4>Garantía real, en dólares o UVA</h4>
-            <p>Es donde ya está la plata: el hipotecario es el único segmento de crédito que crece sostenido. Necesita un canal de originación propio — concesionarias, prendarios, otra red inmobiliaria.</p>
+            <h4>Consumo de ticket medio-alto (+$2.000.000)</h4>
+            <p>El ticket promedio fintech es de apenas $541.000 — ahí compiten todos. Arriba de los $2 millones la banca exige de más y las fintech masivas no llegan: hay margen para un producto que no compite en el segmento más golpeado por la mora minorista.</p>
           </div>
           <div class="trait-card">
             <span class="num">02</span>
@@ -554,11 +554,11 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
 
         <div class="grid-2">
           <div class="link-card">
-            <span class="from">Conecta con la cuña 02</span>
+            <span class="from">Conecta con la palanca 02</span>
             <p><strong style="color:var(--paper)">Entre conocidos, formalizado.</strong> El hallazgo de Grameen es exactamente ese: la presión social entre pares reduce el default mejor que el scoring anónimo, porque lo que está en juego no es solo dinero, es reputación dentro de la comunidad.</p>
           </div>
           <div class="link-card">
-            <span class="from">Conecta con la cuña 03</span>
+            <span class="from">Conecta con la palanca 03</span>
             <p><strong style="color:var(--paper)">Comunidades cerradas.</strong> El modelo de grupo de Grameen es, en esencia, una comunidad cerrada con responsabilidad compartida — el mismo principio que hace que mutuales y empresas con débito de nómina tengan mora estructuralmente más baja.</p>
           </div>
         </div>
@@ -602,7 +602,7 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
           </div>
           <div class="step-row">
             <span class="idx">04</span>
-            <div><h4>Elegir la cuña, no el mercado completo</h4><p>Decidir entre garantía real, afinidad personal o comunidad cerrada antes de diseñar el producto — son tres negocios distintos con distinta economía de riesgo.</p></div>
+            <div><h4>Elegir la palanca, no el mercado completo</h4><p>Decidir entre garantía real, ticket medio-alto, afinidad personal o comunidad cerrada antes de diseñar el producto — son negocios distintos con distinta economía de riesgo.</p></div>
           </div>
         </div>
       </div>
