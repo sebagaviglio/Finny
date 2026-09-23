@@ -233,6 +233,24 @@ h2.section-title{
 .limit-cell.apply .lbl{color:#2f9e44;}
 .limit-cell.warn .lbl{color:#c98a12;}
 
+.trend-block{
+  background:var(--ink-2); border-radius:var(--r-lg); padding:var(--space-4);
+  border:1px solid rgba(255,255,255,.06); display:flex; flex-direction:column; gap:10px;
+}
+.trend-block .row{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap;}
+.trend-block .from{font-family:var(--font-mono); font-size:19px; color:var(--slate-light);}
+.trend-block .arrow{font-family:var(--font-mono); font-size:15px; color:var(--lime);}
+.trend-block .to{font-family:var(--font-mono); font-weight:600; font-size:28px; color:var(--lime); letter-spacing:-0.01em;}
+.trend-block .cap{font-size:12.5px; color:var(--slate-light); max-width:30ch;}
+.trend-block .src{font-family:var(--font-mono); font-size:10px; color:var(--slate);}
+
+.caution-box{
+  background:#3a2f14; border:1px solid rgba(255,200,80,.2); border-radius:var(--r-lg);
+  padding:var(--space-3) var(--space-4); margin-top:var(--space-4);
+}
+.caution-box .k{font-family:var(--font-mono); font-size:11px; color:#ffcf5c; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; display:block;}
+.caution-box p{font-size:13.5px; color:var(--slate-light); max-width:78ch;}
+
 /* ===== STEP LIST ===== */
 .step-row{display:grid; grid-template-columns:56px 1fr; gap:var(--space-3); padding:var(--space-3) 0; border-bottom:1px solid rgba(0,0,0,.08); align-items:flex-start;}
 .step-row:last-child{border-bottom:none;}
@@ -291,6 +309,7 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
         <a href="#competencia">Competencia</a>
         <a href="#regulacion">Regulación</a>
         <a href="#balance">Pros &amp; contras</a>
+        <a href="#prevision">Previsión 2027</a>
         <a href="#oportunidad">Propuesta de valor</a>
         <a href="#precedente">Precedente: Yunus</a>
         <a href="#validacion">Cómo validar</a>
@@ -496,6 +515,63 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
       </div>
     </section>
 
+    <!-- ================= PREVISIÓN DEL MERCADO ================= -->
+    <section id="prevision" class="on-dark">
+      <div class="aura-bg"><span class="a1"></span><span class="a3"></span></div>
+      <div class="section-inner">
+        <p class="eyebrow">Previsión del mercado</p>
+        <h2 class="section-title">2027 pinta mejor que 2026 — pero no en línea recta.</h2>
+        <p class="section-lede slate">El consenso de analistas bajó fuerte sus expectativas de crecimiento durante 2026, y las tasas y la mora todavía no terminaron de normalizarse. La foto de 2027 es más favorable en casi todas las variables, con una salvedad: es año de elecciones presidenciales, y el crédito ya mostró que se frena en las vísperas electorales.</p>
+
+        <div class="grid-4">
+          <div class="trend-block">
+            <div class="row"><span class="from">2026</span><span class="arrow">→</span><span class="to">2027</span></div>
+            <div class="cap">Crecimiento del PBI: consenso privado 2%–2,5% para 2026 (bajado desde 3%–5% a inicio de año) vs. 3% de proyección de bancos para 2027, 4% según el Presupuesto.</div>
+            <div class="src">REM/BCRA · BBVA Research · LA NACION, ago.–sep. 2026</div>
+          </div>
+          <div class="trend-block">
+            <div class="row"><span class="from">30<span style="font-size:14px">%</span></span><span class="arrow">→</span><span class="to">20,5<span style="font-size:14px">%</span></span></div>
+            <div class="cap">Inflación interanual proyectada: cierre de 2026 vs. cierre de 2027, según la mediana del REM.</div>
+            <div class="src">REM · BCRA, ago. 2026</div>
+          </div>
+          <div class="trend-block">
+            <div class="row"><span class="from">~20<span style="font-size:14px">%</span></span><span class="arrow">→</span><span class="to">baja<span style="font-size:14px"> gradual</span></span></div>
+            <div class="cap">BADLAR hacia fines de 2026, con descenso continuado en 2027 — pero las tasas activas bajan más lento por el riesgo crediticio y la mora.</div>
+            <div class="src">Infobae · REM, sep. 2026</div>
+          </div>
+          <div class="trend-block">
+            <div class="row"><span class="from">8,6<span style="font-size:14px">%</span></span><span class="arrow">→</span><span class="to">6,5<span style="font-size:14px">%</span></span></div>
+            <div class="cap">Mora minorista proyectada para un banco líder (Macro): cierre 2026 vs. estimación 2027 — cede, pero despacio.</div>
+            <div class="src">Bank of America, sep. 2026</div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:var(--space-4)">
+          <div class="link-card">
+            <span class="from">Crédito en pesos y dólares</span>
+            <p>BBVA Research proyecta un crecimiento del crédito en pesos del 37% durante 2026 y del 46% en las colocaciones en dólares, impulsadas por el financiamiento comercial exportador — pero desde una base todavía muy chica.</p>
+          </div>
+          <div class="link-card">
+            <span class="from">La industria fintech, más rápido que el crédito</span>
+            <p>La Cámara Argentina Fintech proyecta un crecimiento de facturación del sector del 35% para 2026. El crédito es, según sus propios datos, el vertical menos desarrollado — y por eso el de mayor expectativa de crecimiento relativo.</p>
+          </div>
+          <div class="link-card">
+            <span class="from">2027, año electoral</span>
+            <p>El propio ciclo 2025 mostró que los bancos endurecen scoring "cuando se acercan las elecciones y empieza a haber algún run run político". Nada garantiza que 2027 sea distinto en el semestre previo a la elección.</p>
+          </div>
+        </div>
+
+        <div class="caution-box">
+          <span class="k">Nota de método</span>
+          <p>Existen reportes de consultoras de mercado que proyectan el crowdlending global con cifras muy dispares entre sí — CAGR que va del 7% al 30% y tamaños de mercado que varían más de diez veces según la fuente, típico de la industria de "market sizing" por suscripción. No los usamos como base de esta previsión: preferimos el consenso de analistas locales sobre variables verificables (inflación, tasas, PBI, mora) antes que una cifra global de dudosa trazabilidad.</p>
+        </div>
+
+        <p style="font-size:12.5px; color:var(--slate-light); margin-top:var(--space-3); font-family:var(--font-mono); max-width:78ch">
+          Lectura para Finny: la ventana de fondeo no se abre de golpe en enero de 2027. Tasas que bajan gradual y mora que cede lento significan que la economía unitaria mejora recién a lo largo del año — y el calendario electoral puede volver a apretar el crédito en el semestre previo a la elección, como pasó en 2025. Conviene diseñar el producto para un escenario de volatilidad cíclica, no para una recuperación en línea recta.
+        </p>
+      </div>
+    </section>
+
     <!-- ================= PROPUESTA DE VALOR ================= -->
     <section id="oportunidad" class="on-dark">
       <div class="aura-bg"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
@@ -617,7 +693,7 @@ footer.close .sources{position:relative; z-index:2; font-size:12px; color:var(--
           <span>finny.com</span>
           <span>Estudio de mercado — agosto 2026</span>
         </div>
-        <p class="sources">Fuentes principales: BCRA (Comunicación "A" 7406 y series de crédito al sector privado), Informe de Crédito Fintech — ITBA &amp; Cámara Argentina Fintech (may. 2026), First Capital Group / Econométrica / 1816, Infobae, El Cronista, La Nación, y comunicados institucionales de Afluenta, Lendar, Yotepresto, Cumplo, Nexoos y Bullla. Cifras vigentes a agosto de 2026, sujetas a revisión por la volatilidad macroeconómica argentina.</p>
+        <p class="sources">Fuentes principales: BCRA (Comunicación "A" 7406, series de crédito al sector privado y Relevamiento de Expectativas de Mercado — REM), Informe de Crédito Fintech — ITBA &amp; Cámara Argentina Fintech (may. 2026), Informe de la Industria Fintech Argentina — Cámara Argentina Fintech (nov. 2025), First Capital Group / Econométrica / 1816 / BBVA Research / Bank of America, Infobae, El Cronista, La Nación, Canal26, y comunicados institucionales de Afluenta, Lendar, Yotepresto, Cumplo, Nexoos y Bullla. Cifras vigentes a septiembre de 2026, sujetas a revisión por la volatilidad macroeconómica argentina y el calendario electoral 2027.</p>
       </div>
     </footer>
 
